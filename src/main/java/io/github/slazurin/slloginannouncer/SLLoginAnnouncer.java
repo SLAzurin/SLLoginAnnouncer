@@ -10,9 +10,8 @@ public class SLLoginAnnouncer extends JavaPlugin {
     @Override
     public void onEnable() {
         registerListeners();
-        this.api = new SLLoginAnnouncerApi();
+        this.api = new SLLoginAnnouncerApi(this);
     }
-
     
     public void registerListeners() {
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(this), this);
