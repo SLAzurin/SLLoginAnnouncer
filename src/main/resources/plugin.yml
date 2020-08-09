@@ -1,5 +1,5 @@
 name: SLLoginAnnouncer
 main: io.github.slazurin.slloginannouncer.SLLoginAnnouncer
-version: 0.0.1
+version: 1.0.0
 author: Azurin
 api-version: 1.16
