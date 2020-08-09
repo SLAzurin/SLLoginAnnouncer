@@ -3,6 +3,7 @@ package io.github.slazurin.slloginannouncer.listeners;
 import io.github.slazurin.slloginannouncer.SLLoginAnnouncer;
 import io.github.slazurin.slloginannouncer.utils.RainbowText;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
@@ -13,7 +14,7 @@ public class PlayerJoinListener implements Listener {
         this.plugin = plugin;
     }
     
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent e) {
         if (this.plugin.getApi().isVanished(e.getPlayer())) {
             e.setJoinMessage(null);
