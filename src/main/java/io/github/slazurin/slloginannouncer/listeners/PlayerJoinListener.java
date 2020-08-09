@@ -15,6 +15,10 @@ public class PlayerJoinListener implements Listener {
     
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
+        if (this.plugin.getApi().isVanished(e.getPlayer())) {
+            e.setJoinMessage(null);
+            return;
+        }
         RainbowText rt = new RainbowText(this.plugin.getApi().getRandomLoginMessage().replaceAll("<NAME>", e.getPlayer().getName()));
         rt.setOffset((int) (Math.random() * 12));
         e.setJoinMessage(rt.getRainbowText());
