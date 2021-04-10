@@ -16,11 +16,11 @@ public class PlayerLeaveListener implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e) {
         if (this.plugin.getApi().isVanished(e.getPlayer())) {
-            e.setQuitMessage(null);
+            e.quitMessage(null);
             return;
         }
         String message = ChatColor.BLUE.toString() + ChatColor.ITALIC + "--" + e.getPlayer().getName() + " has left the game--";
-        e.setQuitMessage(message);
+        e.quitMessage(net.kyori.adventure.text.Component.text(message));
         this.plugin.getApi().broadcastLogoutNotes();
     }
 }

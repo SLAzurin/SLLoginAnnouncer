@@ -17,12 +17,12 @@ public class PlayerJoinListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent e) {
         if (this.plugin.getApi().isVanished(e.getPlayer())) {
-            e.setJoinMessage(null);
+            e.joinMessage(null);
             return;
         }
         RainbowText rt = new RainbowText(this.plugin.getApi().getRandomLoginMessage().replaceAll("<NAME>", e.getPlayer().getName()));
         rt.setOffset((int) (Math.random() * 12));
-        e.setJoinMessage(rt.getRainbowText());
+        e.joinMessage(net.kyori.adventure.text.Component.text(rt.getRainbowText()));
         this.plugin.getApi().broadcastLoginNotes();
     }
 }

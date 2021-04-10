@@ -38,7 +38,7 @@ public class SLLoginAnnouncerApi {
         return ChatColor.BLUE.toString() + ChatColor.ITALIC + "--" + p.getName() + " has left the game--";
     }    
     public void broadcastLoginNotes() {
-        List<Player> players = new ArrayList(Bukkit.getOnlinePlayers());
+        List<Player> players = new ArrayList<Player>(Bukkit.getOnlinePlayers());
         int tickInterval = 6;
         int currentTick = 0;
         
@@ -91,7 +91,7 @@ public class SLLoginAnnouncerApi {
     }
     
     public void broadcastLogoutNotes() {
-        List<Player> players = new ArrayList(Bukkit.getOnlinePlayers());
+        List<Player> players = new ArrayList<Player>(Bukkit.getOnlinePlayers());
         int tickInterval = 6;
         int currentTick = 0;
         
